@@ -1233,7 +1233,7 @@ def strain4D_general(
     disk[radiating < (disk_radius**2)] = 1
     sobel_disk, _ = st.util.sobel(disk)
     if np.sum(ROI) == 0:
-        imROI = np.ones(data4D.shape[0:2], dtype=bool)
+        imROI = np.ones(data4D.shape[2:4], dtype=bool)
     else:
         imROI = ROI
     ROI_4D = data4D[:, :, imROI]
